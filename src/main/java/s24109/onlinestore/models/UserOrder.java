@@ -13,8 +13,8 @@ public class UserOrder {
     @Id
     @GeneratedValue
     private Long id;
-    @GeneratedValue
-    private UUID uuid;
+    @Column(name = "uuid", columnDefinition = "BINARY(16)")
+    private UUID uuid = UUID.randomUUID();
     @ManyToOne
     private ShopUser shopUser;
     @OneToMany(mappedBy = "userOrder")

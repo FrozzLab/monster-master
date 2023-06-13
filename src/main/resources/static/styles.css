@@ -1,0 +1,43 @@
+body {
+    height: 100%;
+    width: 100%;
+}
+
+#header, #footer {
+    background-color: #631500;
+    position: absolute;
+    overflow: hidden;
+    height: 10%;
+    left: 0;
+    right: 0;
+}
+
+#header {
+    top: 0;
+}
+
+#footer {
+    bottom: 0;
+}
+
+#content {
+    background-color: #260b00;
+    top: 10%;
+    left: 0;
+    right: 0;
+    bottom: 10%;
+    position: absolute;
+    overflow: auto;
+}
+
+.grid_store {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+}
+
+* {
+    color: white;
+    text-align: center;
+    font-family: Bahnschrift;
+}

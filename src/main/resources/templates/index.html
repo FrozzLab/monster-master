@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" th:href="@{/styles.css}">
+  <title>Monster Master</title>
+</head>
+
+<body>
+  <header id="header" title="header">
+    <h1>Welcome to Monster Master!</h1>
+  </header>
+
+  <div id="content" title="content">
+    <div class="grid_store" title="product_grid" th:each="product : ${products}">
+      <div th:text="${product.name}"></div>
+    </div>
+  </div>
+
+  <footer id="footer" title="footer">
+    <h1>Hellish Beings!</h1>
+  </footer>
+</body>
+
+</html>

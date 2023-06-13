@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
+import org.springframework.lang.Nullable;
 
 import java.util.UUID;
 
@@ -13,8 +14,8 @@ public class Product {
     @Id
     @GeneratedValue
     private Long id;
-    @GeneratedValue
-    private UUID uuid;
+    @Column(name = "uuid", columnDefinition = "BINARY(16)")
+    private UUID uuid = UUID.randomUUID();
     @ManyToOne
     @NotNull(message = "Product must have a seller.")
     private ShopUser shopUser;
@@ -27,6 +28,78 @@ public class Product {
     @NotNull(message = "Product quantity cannot be null.")
     @Min(value = 0, message = "Product quantity cannot be negative.")
     private Integer quantity;
-    private String encodedImage;
 
+    public Product() {
+
+    }
+
+    public Product(ShopUser shopUser, Double price, String name,
+                   String description, Integer quantity) {
+        this.shopUser = shopUser;
+        this.price = price;
+        this.name = name;
+        this.description = description;
+        this.quantity = quantity;
+    }
+
+    public Double getPrice() {
+        return price;
+    }
+
+    public void setPrice(Double price) {
+        this.price = price;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public Integer getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(Integer quantity) {
+        this.quantity = quantity;
+    }
+
+    public ShopUser getShopUser() {
+        return shopUser;
+    }
+
+    public void setShopUser(ShopUser shopUser) {
+        this.shopUser = shopUser;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public UUID getUuid() {
+        return uuid;
+    }
+
+    @Override
+    public String toString() {
+        return "Product{" +
+                "id=" + id +
+                ", uuid=" + uuid +
+                ", shopUser=" + shopUser +
+                ", price=" + price +
+                ", name='" + name + '\'' +
+                ", description='" + description + '\'' +
+                ", quantity=" + quantity +
+                '}';
+    }
 }
