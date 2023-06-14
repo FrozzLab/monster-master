@@ -1,39 +1,55 @@
 body {
+    background-color: black;
     height: 100%;
     width: 100%;
+    margin: 0;
 }
 
 #header, #footer {
-    background-color: #631500;
     position: absolute;
     overflow: hidden;
-    height: 10%;
     left: 0;
     right: 0;
 }
 
 #header {
+    background: linear-gradient(#e36200, #722417);
+    height: 10%;
     top: 0;
 }
 
 #footer {
+    height: 20%;
     bottom: 0;
 }
 
+#header img, #footer img {
+    width: 100%;
+    height: 100%;
+}
+
 #content {
-    background-color: #260b00;
     top: 10%;
     left: 0;
     right: 0;
-    bottom: 10%;
+    bottom: 0;
     position: absolute;
     overflow: auto;
 }
 
-.grid_store {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 10px;
+#product_list {
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+.product_data {
+    min-height: 40%;
+    width: 60%;
+    margin: 5%;
+    align-self: start;
+    position: relative;
+    background-color: #631500;
 }
 
 * {

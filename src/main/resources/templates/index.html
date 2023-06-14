@@ -13,13 +13,16 @@
   </header>
 
   <div id="content" title="content">
-    <div class="grid_store" title="product_grid" th:each="product : ${products}">
-      <div th:text="${product.name}"></div>
+    <div id="product_list" title="product_list">
+      <th:block th:each="product : ${products}">
+        <div class="product_data" title="product_data" th:text="${product.name}">Product Name</div>
+      </th:block>
     </div>
   </div>
 
   <footer id="footer" title="footer">
-    <h1>Hellish Beings!</h1>
+    <img th:src="@{/site_img/fireline.gif}" alt="Cool fire gif">
+    <div>Hellish Beings!</div>
   </footer>
 </body>
 
