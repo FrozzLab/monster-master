@@ -1,59 +1,105 @@
+* {
+    text-align: center;
+    vertical-align: middle;
+    font-family: Bahnschrift;
+}
+
 body {
     background-color: black;
+    background-image: url("./site_img/skulls.jpg");
+    background-size: cover;
+    background-attachment: fixed;
     height: 100%;
     width: 100%;
+    min-height: 720px;
+    min-width: 1280px;
     margin: 0;
 }
 
 #header, #footer {
-    position: absolute;
+    position: fixed;
     overflow: hidden;
     left: 0;
     right: 0;
 }
 
+#header_text, #footer_text {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+    font-family: Papyrus, fantasy;
+}
+
 #header {
-    background: linear-gradient(#e36200, #722417);
-    height: 10%;
+    background: linear-gradient(#966c4a, #e5be91, #654831);
+    height: 6rem;
     top: 0;
 }
 
-#footer {
-    height: 20%;
-    bottom: 0;
+#header_text {
+    top: -1rem;
+    font-size: 3rem;
+    color: rgb(143, 6, 6);
 }
 
-#header img, #footer img {
+#footer {
+    height: max(20%, 100px);
+    bottom: 0;
+    overflow: visible;
+}
+
+#footer img {
     width: 100%;
     height: 100%;
+    filter: drop-shadow(0px -2rem 2rem rgba(175, 99, 28, 0.4));
+}
+
+#footer_text {
+    bottom: -2rem;
+    font-size: 3rem;
+    color: rgba(255, 255, 255, 0.75);
 }
 
 #content {
-    top: 10%;
+    min-width: 120rem;
+    top: 6.65rem;
     left: 0;
     right: 0;
     bottom: 0;
     position: absolute;
     overflow: auto;
+    color: white;
 }
 
 #product_list {
-    height: 100%;
     width: 100%;
     position: relative;
+    display: flex;
+    flex-wrap: wrap;
 }
 
-.product_data {
-    min-height: 40%;
-    width: 60%;
-    margin: 5%;
-    align-self: start;
+#product_data {
+    height: 35rem;
+    width: 120rem;
+    margin: 2% 0 2% 5%;
     position: relative;
-    background-color: #631500;
+    box-sizing: border-box;
+    background-color: rgb(79, 44, 35);
+    background-clip: padding-box;
+    border: 100px solid transparent;
+    border-image: url('../site_img/bone_border.png') 34% round;
+    flex-basis: 60%;
 }
 
-* {
-    color: white;
-    text-align: center;
-    font-family: Bahnschrift;
+#seller_data {
+    height: 35rem;
+    width: 40rem;
+    margin: 2% 0 2% 5%;
+    position: relative;
+    box-sizing: border-box;
+    background-color: rgb(79, 44, 35);
+    background-clip: padding-box;
+    border: 100px solid transparent;
+    border-image: url('../site_img/bone_border.png') 34% round;
+    flex-basis: 25%;
 }

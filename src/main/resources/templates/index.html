@@ -8,21 +8,23 @@
 </head>
 
 <body>
-  <header id="header" title="header">
-    <h1>Welcome to Monster Master!</h1>
+  <header id="header">
+    <h1 id="header_text">Welcome to Monster Master!</h1>
   </header>
 
-  <div id="content" title="content">
-    <div id="product_list" title="product_list">
+  <div id="content">
+    <div id="product_list">
       <th:block th:each="product : ${products}">
-        <div class="product_data" title="product_data" th:text="${product.name}">Product Name</div>
+        <div id="product_data" th:text="${product.name}">Product Name</div>
+        <div id="seller_data" th:text="${product.shopUser.username}">Seller Username</div>
       </th:block>
     </div>
+    <div style="min-height: 10rem"></div>
   </div>
 
-  <footer id="footer" title="footer">
+  <footer id="footer">
     <img th:src="@{/site_img/fireline.gif}" alt="Cool fire gif">
-    <div>Hellish Beings!</div>
+    <p id="footer_text">Hellish Beings!</p>
   </footer>
 </body>
 
