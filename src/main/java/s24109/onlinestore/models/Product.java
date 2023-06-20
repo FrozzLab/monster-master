@@ -27,18 +27,20 @@ public class Product {
     @NotNull(message = "Product quantity cannot be null.")
     @Min(value = 0, message = "Product quantity cannot be negative.")
     private Integer quantity;
+    private String imagePath;
 
     public Product() {
 
     }
 
     public Product(ShopUser shopUser, Double price, String name,
-                   String description, Integer quantity) {
+                   String description, Integer quantity, String imagePath) {
         this.shopUser = shopUser;
         this.price = price;
         this.name = name;
         this.description = description;
         this.quantity = quantity;
+        this.imagePath = imagePath;
     }
 
     public Double getPrice() {
@@ -79,6 +81,14 @@ public class Product {
 
     public void setShopUser(ShopUser shopUser) {
         this.shopUser = shopUser;
+    }
+
+    public String getImagePath() {
+        return imagePath;
+    }
+
+    public void setImagePath(String imagePath) {
+        this.imagePath = imagePath;
     }
 
     public Long getId() {

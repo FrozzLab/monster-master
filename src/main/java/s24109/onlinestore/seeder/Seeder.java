@@ -36,7 +36,8 @@ public class Seeder implements ApplicationListener<ContextRefreshedEvent> {
                 "Frigolodomus",
                 "TotallyNotEvil",
                 "zmundius@eberronmail.com",
-                "TheGreatZmu__2nd"
+                "TheGreatZmu__2nd",
+                "../user_img/1/pfp/zmundius.jpg"
         );
 
         ShopUser gruda = new ShopUser(
@@ -44,7 +45,8 @@ public class Seeder implements ApplicationListener<ContextRefreshedEvent> {
                 "Brooda",
                 "StoneSmasher",
                 "bunga@barbmail.com",
-                "ISmash333_Stones"
+                "ISmash333_Stones",
+                "../user_img/2/pfp/rock.jpg"
         );
 
         ShopUser peruvio = new ShopUser(
@@ -52,7 +54,8 @@ public class Seeder implements ApplicationListener<ContextRefreshedEvent> {
                 "Richius",
                 "RichyRichmond",
                 "rich@eberronmail.com",
-                "heheImRich_1"
+                "heheImRich_1",
+                "../user_img/3/pfp/peruvio.jpg"
         );
 
         userRepository.save(zmundius);
@@ -64,7 +67,8 @@ public class Seeder implements ApplicationListener<ContextRefreshedEvent> {
                 100.0,
                 "Common Kobold",
                 "A not-so-strong kobold, still effective as a sla-PAID WORKER WITH RIGHTS!!!",
-                250
+                250,
+                "../user_img/1/1/kobold.jpeg"
         );
 
         Product dragon = new Product(
@@ -72,7 +76,8 @@ public class Seeder implements ApplicationListener<ContextRefreshedEvent> {
                 1000000.0,
                 "Dragon",
                 "A DRAGON!!!!!!!",
-                1
+                1,
+                "../user_img/1/2/dragon.jpeg"
         );
 
         Product brigand = new Product(
@@ -80,7 +85,8 @@ public class Seeder implements ApplicationListener<ContextRefreshedEvent> {
                 1500.0,
                 "Brigand",
                 "A brigand, will do your dirty work, but probably won't die for you.",
-                250
+                250,
+                "../user_img/3/3/brigand.jpg"
         );
 
         productRepository.save(kobold);

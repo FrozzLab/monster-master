@@ -35,14 +35,16 @@ public class ShopUser {
     private Set<UserOrder> userOrders = new HashSet<>();
     @OneToMany(mappedBy = "shopUser")
     private Set<Product> products = new HashSet<>();
+    private String imagePath;
 
-    public ShopUser(String firstName, String lastName,
-                    String username, String email, String password) {
+    public ShopUser(String firstName, String lastName, String username,
+                    String email, String password, String imagePath) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.username = username;
         this.email = email;
         this.password = password;
+        this.imagePath = imagePath;
     }
 
     public ShopUser() {
@@ -102,6 +104,14 @@ public class ShopUser {
 
     public void setProducts(Set<Product> products) {
         this.products = products;
+    }
+
+    public String getImagePath() {
+        return imagePath;
+    }
+
+    public void setImagePath(String imagePath) {
+        this.imagePath = imagePath;
     }
 
     public Long getId() {

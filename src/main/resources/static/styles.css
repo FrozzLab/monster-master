@@ -1,7 +1,7 @@
 * {
     text-align: center;
     vertical-align: middle;
-    font-family: Bahnschrift;
+    font-family: Papyrus, fantasy;
 }
 
 body {
@@ -18,7 +18,7 @@ body {
 
 #header, #footer {
     position: fixed;
-    overflow: hidden;
+    overflow: visible;
     left: 0;
     right: 0;
 }
@@ -27,23 +27,32 @@ body {
     position: absolute;
     left: 50%;
     transform: translate(-50%, 0);
-    font-family: Papyrus, fantasy;
 }
 
 #header {
     background: linear-gradient(#966c4a, #e5be91, #654831);
     height: 6rem;
     top: 0;
+    filter: drop-shadow(0px 1rem 2rem rgb(55, 28, 10));
+    z-index: 1;
 }
 
 #header_text {
     top: -1rem;
     font-size: 3rem;
+    text-shadow: 0 0 5px #ffffff;
+    animation: glow 1s infinite alternate;
     color: rgb(143, 6, 6);
 }
 
+@keyframes glow {
+    to {
+        text-shadow: 0 0 10px #770505;
+    }
+}
+
 #footer {
-    height: max(20%, 100px);
+    height: 12rem;
     bottom: 0;
     overflow: visible;
 }
@@ -62,7 +71,7 @@ body {
 
 #content {
     min-width: 120rem;
-    top: 6.65rem;
+    top: 6rem;
     left: 0;
     right: 0;
     bottom: 0;
@@ -78,28 +87,67 @@ body {
     flex-wrap: wrap;
 }
 
-#product_data {
+.product_data {
     height: 35rem;
     width: 120rem;
-    margin: 2% 0 2% 5%;
+    margin: 2% 0 2% 7%;
     position: relative;
     box-sizing: border-box;
     background-color: rgb(79, 44, 35);
     background-clip: padding-box;
     border: 100px solid transparent;
     border-image: url('../site_img/bone_border.png') 34% round;
-    flex-basis: 60%;
+    flex-basis: 55%;
 }
 
-#seller_data {
+.product_title {
+    float: right;
+}
+
+.seller_image, .product_image {
+    margin: 1rem 1rem;
+    border: 20px solid transparent;
+    border-image: url('../site_img/bone_border.png') 34% fill;
+}
+
+.seller_image {
+    height: 15rem;
+    width: 15rem;
+}
+
+.product_image {
+    height: 18rem;
+    width: 18rem;
+    float: left;
+}
+
+.seller_data {
     height: 35rem;
     width: 40rem;
-    margin: 2% 0 2% 5%;
+    margin: 2% 0 2% 1%;
     position: relative;
     box-sizing: border-box;
     background-color: rgb(79, 44, 35);
     background-clip: padding-box;
     border: 100px solid transparent;
     border-image: url('../site_img/bone_border.png') 34% round;
-    flex-basis: 25%;
+    flex-basis: 30%;
+}
+
+.seller_title {
+    font-size: 1.5rem;
+    transform: translate(0, -75%);
+    color: white;
+    text-decoration: none;
+}
+
+.seller_title:hover {
+    animation: glow_grey 1s infinite alternate;
+}
+
+@keyframes glow_grey {
+    to {
+        color: #ff2222;
+        text-shadow: 0 0 5px #000000;
+    }
 }
