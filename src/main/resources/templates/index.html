@@ -18,6 +18,8 @@
         <div class="product_data">
           <p class="product_title" th:text="${product.name}">Product Name</p>
           <img class="product_image" th:src="${product.imagePath}" alt="Product Image">
+          <p class="product_description" th:text="${product.description}">Product Description</p>
+          <p class="product_price" th:text="${product.price} + 'gp'">Price</p>
         </div>
         <div class="seller_data">
           <img class="seller_image" th:src="${product.shopUser.imagePath}" alt="Profile Image">
