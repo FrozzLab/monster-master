@@ -14,7 +14,7 @@ public class Product {
     @GeneratedValue
     private Long id;
     @Column(name = "uuid", columnDefinition = "BINARY(16)")
-    private UUID uuid = UUID.randomUUID();
+    private final UUID uuid = UUID.randomUUID();
     @ManyToOne
     @NotNull(message = "Product must have a seller.")
     private ShopUser shopUser;

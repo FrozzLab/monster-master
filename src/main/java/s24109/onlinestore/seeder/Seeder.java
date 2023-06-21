@@ -2,9 +2,8 @@ package s24109.onlinestore.seeder;
 
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
-import s24109.onlinestore.DAL.CartRepository;
-import s24109.onlinestore.DAL.OrderRepository;
 import s24109.onlinestore.DAL.ProductRepository;
 import s24109.onlinestore.DAL.UserRepository;
 import s24109.onlinestore.models.Product;
@@ -13,21 +12,16 @@ import s24109.onlinestore.models.ShopUser;
 @Component
 public class Seeder implements ApplicationListener<ContextRefreshedEvent> {
 
-    private final CartRepository cartRepository;
-    private final OrderRepository orderRepository;
     private final ProductRepository productRepository;
     private final UserRepository userRepository;
+    private final PasswordEncoder passwordEncoder;
 
-    public Seeder(
-            CartRepository cartRepository,
-            OrderRepository orderRepository,
-            ProductRepository productRepository,
-            UserRepository userRepository
-    ) {
-        this.cartRepository = cartRepository;
-        this.orderRepository = orderRepository;
+    public Seeder(ProductRepository productRepository,
+                  UserRepository userRepository,
+                  PasswordEncoder passwordEncoder) {
         this.productRepository = productRepository;
         this.userRepository = userRepository;
+        this.passwordEncoder = passwordEncoder;
     }
 
     private void seedData() {
@@ -36,7 +30,7 @@ public class Seeder implements ApplicationListener<ContextRefreshedEvent> {
                 "Frigolodomus",
                 "TotallyNotEvil",
                 "zmundius@eberronmail.com",
-                "TheGreatZmu__2nd",
+                passwordEncoder.encode("TheGreatZmu__2nd"),
                 "../user_img/1/pfp/zmundius.jpg"
         );
 
@@ -45,7 +39,7 @@ public class Seeder implements ApplicationListener<ContextRefreshedEvent> {
                 "Brooda",
                 "StoneSmasher",
                 "bunga@barbmail.com",
-                "ISmash333_Stones",
+                passwordEncoder.encode("ISmash333_Stones"),
                 "../user_img/2/pfp/rock.jpg"
         );
 
@@ -54,13 +48,23 @@ public class Seeder implements ApplicationListener<ContextRefreshedEvent> {
                 "Richius",
                 "RichyRichmond",
                 "rich@eberronmail.com",
-                "heheImRich_1",
+                passwordEncoder.encode("heheImRich_1"),
                 "../user_img/3/pfp/peruvio.jpg"
+        );
+
+        ShopUser admin = new ShopUser(
+                "Sarnai",
+                "Tyua",
+                "admin",
+                "admin@master.com",
+                passwordEncoder.encode("WhosTheCaptainNow"),
+                "../user_img/4/pfp/admin.jpg"
         );
 
         userRepository.save(zmundius);
         userRepository.save(gruda);
         userRepository.save(peruvio);
+        userRepository.save(admin);
 
         Product kobold = new Product(
                 zmundius,

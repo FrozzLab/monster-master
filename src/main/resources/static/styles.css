@@ -1,4 +1,4 @@
-* {
+html {
     text-align: center;
     vertical-align: middle;
     font-family: Papyrus, fantasy;
@@ -176,12 +176,75 @@ body {
 }
 
 .seller_title:hover {
-    animation: glow_grey 1s infinite alternate;
+    animation: glow_red 1s infinite alternate;
 }
 
-@keyframes glow_grey {
+@keyframes glow_red {
     to {
         color: #ff2222;
         text-shadow: 0 0 5px #000000;
     }
+}
+
+.login_container, .error_overlay {
+    height: 100%;
+    min-height: 60rem;
+    width: 100%;
+    min-width: 110rem;
+    position: absolute;
+    background: linear-gradient(100deg, #966c4a, #e5be91, #654831);
+    background-clip: padding-box;
+    border: 10rem solid transparent;
+    border-image: url('../site_img/bone_border.png') 34% round;
+    box-sizing: border-box;
+}
+
+.login_title, .login_subtitle, .error_text {
+    color: rgb(143, 6, 6);
+}
+
+.login_title {
+    font-size: 3rem;
+    text-shadow: 0 0 5px #ffffff;
+    animation: glow 1s infinite alternate;
+}
+
+.login_subtitle {
+    transform: translate(0, -40%);
+}
+
+.login_subtitle, .error_text {
+    font-size: 2rem;
+}
+
+#login_form {
+    font-size: 1.5rem;
+    color: #ffffff;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -30%);
+    width: 15rem;
+}
+
+.login_input {
+    text-align: center;
+    background: transparent;
+    font-family: inherit;
+    font-size: 1rem;
+    border: transparent;
+}
+
+.error_text {
+    position: relative;
+    text-shadow: 0 0 5px #ff6b00;
+    animation: glow 0.1s infinite alternate;
+    bottom: -46rem;
+    margin: 0;
+}
+
+.error_overlay {
+    filter: contrast(100) grayscale(0.7);
+    text-indent: 200rem;
+    white-space: nowrap;
+    overflow: hidden;
 }

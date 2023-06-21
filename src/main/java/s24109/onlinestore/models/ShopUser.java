@@ -27,9 +27,6 @@ public class ShopUser {
     private String username;
     @Email(message = "Value must be a valid email.")
     private String email;
-
-    @Password(message = "Password must be between 8 and 20 characters long, have both " +
-            "lower- and uppercase characters, and at least one digit and special character")
     private String password;
     @OneToMany(mappedBy = "shopUser")
     private Set<UserOrder> userOrders = new HashSet<>();
