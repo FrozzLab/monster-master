@@ -6,7 +6,7 @@
 
 body {
     background-color: black;
-    background-image: url("./site_img/skulls.jpg");
+    background-image: url("../site_img/skulls.jpg");
     background-size: cover;
     background-attachment: fixed;
     height: 100%;
