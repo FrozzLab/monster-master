@@ -167,7 +167,7 @@ body {
 .product_price {
     float: left;
     margin: 0 0;
-    font-size: 2rem;;
+    font-size: 2rem;
     color: #e4c770;
     animation: price_gradient 3s cubic-bezier(.61,0,.39,1) infinite;
     width: 15rem;
@@ -249,7 +249,7 @@ body {
     }
 }
 
-.login_container, .error_overlay {
+.single_page_container, .error_overlay, .success_overlay {
     height: 100%;
     min-height: 60rem;
     width: 100%;
@@ -262,25 +262,59 @@ body {
     box-sizing: border-box;
 }
 
-.login_title, .login_subtitle, .error_text {
+.error_overlay, .success_overlay {
+    text-indent: 200rem;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.error_overlay {
+    filter: contrast(100) grayscale(0.7);
+}
+
+.single_page_title, .single_page_subtitle, .error_text, .single_page_nav {
     color: rgb(143, 6, 6);
 }
 
-.login_title {
+.single_page_title {
     font-size: 3rem;
     text-shadow: 0 0 5px #ffffff;
     animation: glow 1s infinite alternate;
 }
 
-.login_subtitle {
+.single_page_subtitle {
     transform: translate(0, -40%);
 }
 
-.login_subtitle, .error_text {
+.single_page_subtitle, .error_text, .single_page_nav {
     font-size: 2rem;
 }
 
-#login_form {
+.single_page_nav {
+    position: relative;
+    text-decoration: transparent;
+    margin: 0 1.5rem;
+    bottom: -20rem;
+}
+
+.single_page_coin_title {
+    margin: 0 0;
+    font-size: 3rem;
+    color: #806000;
+    animation: price_gradient_mod 2.2s cubic-bezier(.61,0,.39,1) infinite;
+}
+
+@keyframes price_gradient_mod {
+    50% {
+        color: goldenrod;
+        text-shadow: 0 0 6px gold;
+    }
+    100% {
+        color: #806000;
+    }
+}
+
+#single_page_form {
     font-size: 1.5rem;
     color: #000000;
     left: 50%;
@@ -289,7 +323,7 @@ body {
     width: 15rem;
 }
 
-.login_input {
+.single_page_input {
     text-align: center;
     background: transparent;
     font-family: inherit;
@@ -297,37 +331,69 @@ body {
     border: transparent;
 }
 
-.login_submit {
+.single_page_submit, .single_page_pay {
     background: transparent;
-    border: transparent;
     font-family: inherit;
+    border: transparent;
     font-size: 1.5rem;
     color: #000000;
     cursor: pointer;
 }
 
-.error_title, .error_subtitle {
+.single_page_pay {
+    font-size: 4rem;
+    background: #806000;
+    width: 12rem;
+    height: 6rem;
+    color: white;
+    animation: price_gradient_mod_bg 2.2s cubic-bezier(.61,0,.39,1) infinite;
+    text-shadow: 0 0 10px white;
+    cursor: pointer;
+    top: 2rem;
     position: relative;
-    text-shadow: 0 0 10px cornsilk;
-    animation: glow 0.25s infinite alternate;
+    border: 40px solid transparent;
+    border-image: url('../site_img/bone_border.png') 35% stretch;
+    box-sizing: content-box;
+    background-clip: padding-box;
+    transform: translate(-5%);
+    filter: drop-shadow(0 0 4rem rgb(255, 255, 255));
+}
+
+@keyframes price_gradient_mod_bg {
+    50% {
+        background: goldenrod;
+        background-clip: padding-box;
+    }
+    100% {
+        background: #806000;
+        background-clip: padding-box;
+    }
+}
+
+.error_title, .error_subtitle, .success_title {
+    position: relative;
     margin: 0;
-    color: black;
     bottom: -20rem;
+    text-shadow: 0 0 10px cornsilk;
+}
+
+.success_title {
+    font-size: 3rem;
+    animation: glow 1s infinite alternate;
+    color: rgb(143, 6, 6);
+}
+
+.error_title, .error_subtitle {
+    animation: glow 0.25s infinite alternate;
+    color: black;
 }
 
 .error_subtitle {
     font-size: 3rem;
 }
 
-.error_title {
+.error_title, .success_title {
     font-size: 4rem;
-}
-
-.error_overlay {
-    filter: contrast(100) grayscale(0.7);
-    text-indent: 200rem;
-    white-space: nowrap;
-    overflow: hidden;
 }
 
 #seller_name_user_page, #seller_quote_user_page, #seller_about_me_user_page {

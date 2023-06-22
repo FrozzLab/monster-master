@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" th:href="@{/styles.css}">
+  <title>Checkout - Monster Master</title>
+</head>
+
+<body>
+  <div th:classappend="${purchase} ? success_overlay : single_page_container">
+    <p class="single_page_title">It's time to pay for your beasts.</p>
+    <p class="single_page_subtitle" style="margin: 0">You owe the Monster Master:</p>
+    <p class="single_page_coin_title">Gold Count</p>
+    <p class="single_page_subtitle">So pay up!</p>
+    <form id="single_page_form" th:action="@{/checkout-success}" method="post">
+      <div><input class="single_page_pay" type="submit" value="Pay"/></div>
+    </form>
+  </div>
+  <div th:if="${purchase}">
+    <p class="success_title">The Monster Master thanks you for your support!</p>
+    <p class="success_title">Your beasts shall arrive shortly!</p>
+    <a class="single_page_nav" th:href="@{/}">Return to the Domain</a>
+    <a class="single_page_nav" th:href="@{/logout}">Exit the Domain</a>
+  </div>
+</body>
+
+</html>

@@ -4,27 +4,27 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" th:href="@{/styles.css}">
-    <title>Log In To Monster Master</title>
+    <title>Log In - Monster Master</title>
 </head>
 
 <body>
-    <div th:classappend="${param.error} ? error_overlay : login_container">
-        <p class="login_title">Welcome to the Monster Master's Domain!</p>
-        <p class="login_subtitle">The things beyond are not for any mortal's eyes to see...</p>
-        <p class="login_subtitle">Give us the secret pass,</p>
-        <p class="login_title" style="transform: translate(0, -50%)">Prove your worth!</p>
-        <form id="login_form" th:action="@{/login}" method="post">
+    <div th:classappend="${param.error} ? error_overlay : single_page_container">
+        <p class="single_page_title">Welcome to the Monster Master's Domain!</p>
+        <p class="single_page_subtitle">The things beyond are not for any mortal's eyes to see...</p>
+        <p class="single_page_subtitle">Give us the secret pass,</p>
+        <p class="single_page_title" style="transform: translate(0, -50%)">Prove your worth!</p>
+        <form id="single_page_form" th:action="@{/login}" method="post">
             <div>
                 <label> Say your name!
-                    <input class="login_input" type="text" name="username"/>
+                    <input class="single_page_input" type="text" name="username"/>
                 </label>
             </div>
             <div>
                 <label> And the magic word!
-                    <input class="login_input" type="password" name="password"/>
+                    <input class="single_page_input" type="password" name="password"/>
                 </label>
             </div>
-            <div><input class="login_submit" type="submit" value="Sign In"/></div>
+            <div><input class="single_page_submit" type="submit" value="Sign In"/></div>
         </form>
     </div>
     <div th:if="${param.error}">
