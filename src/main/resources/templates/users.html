@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <link rel="stylesheet" th:href="@{/styles.css}">
-  <title>Monster Master</title>
+  <title th:text="${current_user.username} + ' - Monster Master'"></title>
 </head>
 
 <body>
@@ -31,7 +31,8 @@
 
   <footer id="footer">
     <img th:src="@{/site_img/fireline.gif}" alt="Cool fire gif">
-    <p id="footer_text">Hellish Beings!</p>
+    <a id="footer_text" th:href="@{/cart}">Your Hellish Beings!</a>
+    <a id="footer_subtext" th:href="@{/cart}">Just a few steps away!</a>
   </footer>
 </body>
 
