@@ -24,12 +24,13 @@
                     <input class="login_input" type="password" name="password"/>
                 </label>
             </div>
-            <div><input type="submit" value="Sign In"/></div>
+            <div><input class="login_submit" type="submit" value="Sign In"/></div>
         </form>
     </div>
-    <p class="error_text" th:if="${param.error}">Impostor! You do not belong in the Monster Master's Domain!</p>
-    <div class="error_overlay" th:if="${param.logout}">
-        <p class="error_text">The Monster Master shall await your return...</p>
+    <div th:if="${param.error}">
+        <p class="error_title">Impostor!</p>
+        <p class="error_subtitle">You do not belong in the Monster Master's Domain!</p>
+        <a class="error_subtitle" th:href="@{/login}">But Monster Master is merciful today, try again.</a>
     </div>
 </body>
 

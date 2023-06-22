@@ -10,6 +10,8 @@
 <body>
   <header id="header">
     <h1 id="header_text">Welcome to Monster Master!</h1>
+    <a id="exit_button" th:href="@{/logout}">Exit the Domain</a>
+    <a id="account_button" th:href="@{/users/{uuid}(uuid=${#authentication.principal.user.uuid})}">Your Reflection</a>
   </header>
 
   <div id="content">

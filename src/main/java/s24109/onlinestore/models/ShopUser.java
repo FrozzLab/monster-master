@@ -28,6 +28,10 @@ public class ShopUser {
     @Email(message = "Value must be a valid email.")
     private String email;
     private String password;
+    @Size(max = 100, message = "Quote cannot be longer than 100 characters.")
+    private String quote;
+    @Size(max = 1000, message = "About me cannot be longer than 1000 characters.")
+    private String aboutMe;
     @OneToMany(mappedBy = "shopUser")
     private Set<UserOrder> userOrders = new HashSet<>();
     @OneToMany(mappedBy = "shopUser")
@@ -35,13 +39,16 @@ public class ShopUser {
     private String imagePath;
 
     public ShopUser(String firstName, String lastName, String username,
-                    String email, String password, String imagePath) {
+                    String email, String password, String imagePath,
+                    String quote, String aboutMe) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.username = username;
         this.email = email;
         this.password = password;
         this.imagePath = imagePath;
+        this.quote = quote;
+        this.aboutMe = aboutMe;
     }
 
     public ShopUser() {
@@ -117,6 +124,22 @@ public class ShopUser {
 
     public UUID getUuid() {
         return uuid;
+    }
+
+    public String getQuote() {
+        return quote;
+    }
+
+    public void setQuote(String quote) {
+        this.quote = quote;
+    }
+
+    public String getAboutMe() {
+        return aboutMe;
+    }
+
+    public void setAboutMe(String aboutMe) {
+        this.aboutMe = aboutMe;
     }
 
 }

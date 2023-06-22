@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" th:href="@{/styles.css}">
+  <title>Monster Master</title>
+</head>
+
+<body>
+  <header id="header">
+    <h1 id="header_text">Welcome to Monster Master!</h1>
+    <a id="exit_button" th:href="@{/logout}">Exit the Domain</a>
+    <a id="main_page_button" th:href="@{/}">Main Page</a>
+  </header>
+
+  <div id="content_flex">
+    <div id="seller_data_user_page">
+      <img id="seller_image_user_page" th:src="${current_user.imagePath}" alt="Profile Image">
+      <p id="seller_email_user_page" th:text="${current_user.email}">Contact Email</p>
+    </div>
+    <div id="seller_extended_data_user_page">
+      <p id="seller_name_user_page"
+         th:text="${current_user.firstName}
+         + ' ' + ${current_user.lastName}
+         + ' a.k.a. ' + ${current_user.username}">User Full Name</p>
+      <p id="seller_quote_user_page" th:text="'&quot;' + ${current_user.quote} + '&quot;'">User Quote</p>
+      <p id="seller_about_me_user_page" th:text="${current_user.aboutMe}">User Description</p>
+    </div>
+  </div>
+
+  <footer id="footer">
+    <img th:src="@{/site_img/fireline.gif}" alt="Cool fire gif">
+    <p id="footer_text">Hellish Beings!</p>
+  </footer>
+</body>
+
+</html>

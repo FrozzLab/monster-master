@@ -51,6 +51,30 @@ body {
     }
 }
 
+#exit_button, #account_button, #main_page_button {
+    position: absolute;
+    top: 2rem;
+    right: 1rem;
+    height: 2rem;
+    width: 12rem;
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+#exit_button {
+    right: 1rem;
+}
+
+#account_button, #main_page_button {
+    left: 1rem;
+}
+
+#main_page_button {
+    width: 10rem;
+}
+
 #footer {
     height: 12rem;
     bottom: 0;
@@ -69,7 +93,7 @@ body {
     color: rgba(255, 255, 255, 0.75);
 }
 
-#content {
+#content, #content_flex {
     min-width: 120rem;
     top: 6rem;
     left: 0;
@@ -80,6 +104,11 @@ body {
     color: white;
 }
 
+#content_flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+
 #product_list {
     width: 100%;
     position: relative;
@@ -87,7 +116,7 @@ body {
     flex-wrap: wrap;
 }
 
-.product_data {
+.product_data, #seller_extended_data_user_page {
     height: 35rem;
     width: 120rem;
     margin: 2% 0 2% 7%;
@@ -98,6 +127,11 @@ body {
     border: 100px solid transparent;
     border-image: url('../site_img/bone_border.png') 34% round;
     flex-basis: 55%;
+}
+
+#seller_extended_data_user_page {
+    height: 40rem;
+    margin: 2% 7% 2% 0;
 }
 
 .product_title {
@@ -138,7 +172,7 @@ body {
     }
 }
 
-.seller_image, .product_image {
+.seller_image, .product_image, #seller_image_user_page {
     margin: 1rem 1rem;
     border: 20px solid transparent;
     border-image: url('../site_img/bone_border.png') 34% fill;
@@ -149,13 +183,18 @@ body {
     width: 15rem;
 }
 
+#seller_image_user_page {
+    height: 20rem;
+    width: 20rem;
+}
+
 .product_image {
     height: 18rem;
     width: 18rem;
     float: left;
 }
 
-.seller_data {
+.seller_data, #seller_data_user_page {
     height: 35rem;
     width: 40rem;
     margin: 2% 0 2% 1%;
@@ -168,15 +207,26 @@ body {
     flex-basis: 30%;
 }
 
-.seller_title {
+#seller_data_user_page {
+    margin: 2% 0 2% 7%;
+    height: 40rem;
+}
+
+.seller_title, #seller_email_user_page {
     font-size: 1.5rem;
-    transform: translate(0, -75%);
+    position: relative;
+    display: inline-block;
+    max-width: 18rem;
     color: white;
     text-decoration: none;
+    margin: 0 auto 0 auto;
+    bottom: 1rem;
+    overflow: scroll;
 }
 
 .seller_title:hover {
     animation: glow_red 1s infinite alternate;
+    cursor: pointer;
 }
 
 @keyframes glow_red {
@@ -219,7 +269,7 @@ body {
 
 #login_form {
     font-size: 1.5rem;
-    color: #ffffff;
+    color: #000000;
     left: 50%;
     position: absolute;
     transform: translate(-50%, -30%);
@@ -234,12 +284,30 @@ body {
     border: transparent;
 }
 
-.error_text {
+.login_submit {
+    background: transparent;
+    border: transparent;
+    font-family: inherit;
+    font-size: 1.5rem;
+    color: #000000;
+    cursor: pointer;
+}
+
+.error_title, .error_subtitle {
     position: relative;
-    text-shadow: 0 0 5px #ff6b00;
-    animation: glow 0.1s infinite alternate;
-    bottom: -46rem;
+    text-shadow: 0 0 10px cornsilk;
+    animation: glow 0.25s infinite alternate;
     margin: 0;
+    color: black;
+    bottom: -20rem;
+}
+
+.error_subtitle {
+    font-size: 3rem;
+}
+
+.error_title {
+    font-size: 4rem;
 }
 
 .error_overlay {
@@ -247,4 +315,38 @@ body {
     text-indent: 200rem;
     white-space: nowrap;
     overflow: hidden;
+}
+
+#seller_name_user_page, #seller_quote_user_page, #seller_about_me_user_page {
+    font-size: 2rem;
+    color: white;
+    position: relative;
+    text-align: center;
+    margin-bottom: 0;
+}
+
+#seller_quote_user_page, #seller_about_me_user_page {
+    font-size: 1.5rem;
+}
+
+#seller_name_user_page {
+    font-weight: bold;
+}
+
+#seller_email_user_page, #seller_quote_user_page, #seller_name_user_page {
+    overflow-x: scroll;
+    white-space: nowrap;
+}
+
+#seller_quote_user_page {
+    font-style: italic;
+    height: 2.5rem;
+    width: 50rem;
+    margin: 1.5rem auto 0 auto;
+}
+
+#seller_about_me_user_page {
+    margin: 2rem 3rem;
+    overflow: scroll;
+    height: 14rem;
 }

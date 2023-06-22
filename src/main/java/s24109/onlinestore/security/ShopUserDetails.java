@@ -51,4 +51,8 @@ public class ShopUserDetails implements UserDetails {
         return true;
     }
 
+    public ShopUser getUser() {
+        return user;
+    }
+
 }

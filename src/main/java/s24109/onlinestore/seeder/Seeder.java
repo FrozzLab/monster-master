@@ -31,7 +31,12 @@ public class Seeder implements ApplicationListener<ContextRefreshedEvent> {
                 "TotallyNotEvil",
                 "zmundius@eberronmail.com",
                 passwordEncoder.encode("TheGreatZmu__2nd"),
-                "../user_img/1/pfp/zmundius.jpg"
+                "../user_img/1/pfp/zmundius.jpg",
+                "An agent of chaos today, a broker of law tomorrow, 'tis the way of the world.",
+                """
+                        I am a great wizard, and I will be the greatest wizard in all of Eberron!
+                        The world will bow before me, and I will rule over all! Mwaheheheh!
+                        """
         );
 
         ShopUser gruda = new ShopUser(
@@ -40,7 +45,12 @@ public class Seeder implements ApplicationListener<ContextRefreshedEvent> {
                 "StoneSmasher",
                 "bunga@barbmail.com",
                 passwordEncoder.encode("ISmash333_Stones"),
-                "../user_img/2/pfp/rock.jpg"
+                "../user_img/2/pfp/rock.jpg",
+                "Gruda smash! Gruda smash! Gruda smash!",
+                """
+                        Me Gruda, me smash! Me smash rocks, me smash heads, me smash everything!
+                        Gruda smash! Gruda smash! Gruda smash!
+                        """
         );
 
         ShopUser peruvio = new ShopUser(
@@ -49,16 +59,26 @@ public class Seeder implements ApplicationListener<ContextRefreshedEvent> {
                 "RichyRichmond",
                 "rich@eberronmail.com",
                 passwordEncoder.encode("heheImRich_1"),
-                "../user_img/3/pfp/peruvio.jpg"
+                "../user_img/3/pfp/peruvio.jpg",
+                "I'm rich, you're not, get over it.",
+                """
+                        Rich, beautiful and smart - that's me. I'm the best, and you're not. Get over it. Or don't.
+                        I don't care, I'm rich, and you're not. I'm RICH, and you're NOT. I'm RI-I-ICH, and you're NOT.
+                        """
         );
 
         ShopUser admin = new ShopUser(
                 "Sarnai",
                 "Tyua",
-                "admin",
-                "admin@master.com",
+                "MonsterMaster",
+                "monster@master.com",
                 passwordEncoder.encode("WhosTheCaptainNow"),
-                "../user_img/4/pfp/admin.jpg"
+                "../user_img/4/pfp/Nephis.png",
+                "I'm the captain now.",
+                """
+                        I am a warrior of love, beauty and justice. I will fight for the weak,
+                         and I will protect the innocent. Oh, and I trade monsters on the side ;)
+                        """
         );
 
         userRepository.save(zmundius);
