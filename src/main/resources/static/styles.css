@@ -166,13 +166,54 @@ body {
 
 .product_price {
     float: left;
-    margin: 0 0;
+    margin: 0;
     font-size: 2rem;
     color: #e4c770;
     animation: price_gradient 3s cubic-bezier(.61,0,.39,1) infinite;
     width: 15rem;
     overflow: scroll;
     text-align: left;
+}
+
+.product_amount_label {
+    font-size: 1.5rem;
+    position: relative;
+    top: 0.5rem;
+    right: 1rem;
+}
+
+.product_amount_picker {
+    color: white;
+    font-family: inherit;
+    float: right;
+    margin: 0;
+    font-size: 2rem;
+    width: 7rem;
+    background: transparent;
+    border: none;
+    right: 2rem;
+    position: relative;
+}
+
+.product_add_to_cart_button, .single_page_pay {
+    width: 12rem;
+    color: white;
+    cursor: pointer;
+    position: relative;
+    font-family: inherit;
+    box-sizing: content-box;
+    background-clip: padding-box;
+}
+
+.product_add_to_cart_button {
+    float: right;
+    margin: 0;
+    font-size: 2rem;
+    border: 20px solid transparent;
+    border-image: url('../site_img/bone_border.png') 34% fill;
+    top: 0.1rem;
+    right: 11rem;
+    background-color: rgb(79, 44, 35);
 }
 
 @keyframes price_gradient {
@@ -341,21 +382,15 @@ body {
 }
 
 .single_page_pay {
+    top: 2rem;
+    transform: translate(-5%);
+    height: 6rem;
     font-size: 4rem;
     background: #806000;
-    width: 12rem;
-    height: 6rem;
-    color: white;
-    animation: price_gradient_mod_bg 2.2s cubic-bezier(.61,0,.39,1) infinite;
     text-shadow: 0 0 10px white;
-    cursor: pointer;
-    top: 2rem;
-    position: relative;
     border: 40px solid transparent;
     border-image: url('../site_img/bone_border.png') 35% stretch;
-    box-sizing: content-box;
-    background-clip: padding-box;
-    transform: translate(-5%);
+    animation: price_gradient_mod_bg 2.2s cubic-bezier(.61,0,.39,1) infinite;
     filter: drop-shadow(0 0 4rem rgb(255, 255, 255));
 }
 

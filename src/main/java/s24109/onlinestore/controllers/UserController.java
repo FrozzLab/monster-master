@@ -20,7 +20,7 @@ public class UserController {
     }
 
     @RequestMapping("/users/{userUuid}")
-    public String getProducts(Model model, @PathVariable UUID userUuid) {
+    public String getCurrentUser(Model model, @PathVariable UUID userUuid) {
         model.addAttribute("current_user", userRepository.findByUuid(userUuid));
         return "users";
     }

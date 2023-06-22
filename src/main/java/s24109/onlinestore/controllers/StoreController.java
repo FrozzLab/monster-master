@@ -4,7 +4,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import s24109.onlinestore.DAL.ProductRepository;
 
@@ -25,13 +24,13 @@ public class StoreController {
     }
 
     @GetMapping("/checkout")
-    public String getCheckoutScreen(Model model) {
+    public String getCheckoutPage(Model model) {
         model.addAttribute("purchase", Boolean.FALSE);
         return "checkout";
     }
 
     @RequestMapping("/checkout-success")
-    public String updatePurchaseValue(Model model) {
+    public String updatePurchaseValueAtCheckout(Model model) {
         model.addAttribute("purchase", Boolean.TRUE);
         return "checkout";
     }

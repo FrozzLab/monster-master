@@ -22,6 +22,17 @@
           <img class="product_image" th:src="${product.imagePath}" alt="Product Image">
           <p class="product_description" th:text="${product.description}">Product Description</p>
           <p class="product_price" th:text="${product.price} + 'gp'">Price</p>
+          <form th:action="@{/cart/add/{product_uuid}(product_uuid=${product.uuid})}" method="post">
+            <label class="product_amount_label">Quantity:
+              <input class="product_amount_picker"
+                                   th:type="number"
+                                   th:min="1"
+                                   th:max="${product.quantity}"
+                                   th:value="1",
+                                   name="quantity">
+            </label>
+            <input class="product_add_to_cart_button" type="submit" value="Add to Cart">
+          </form>
         </div>
         <div class="seller_data">
           <img class="seller_image" th:src="${product.shopUser.imagePath}" alt="Profile Image">

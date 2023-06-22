@@ -21,5 +21,55 @@ public class UserOrder {
     @NotEmpty(message = "Order must contain at least 1 item.")
     private Set<CartItem> items = new HashSet<>();
     private Double totalPrice;
+    private Boolean finalized;
+
+    public UserOrder(ShopUser shopUser) {
+        this.shopUser = shopUser;
+        this.finalized = false;
+    }
+
+    public UserOrder() {
+        this.finalized = false;
+    }
+
+    public ShopUser getShopUser() {
+        return shopUser;
+    }
+
+    public void setShopUser(ShopUser shopUser) {
+        this.shopUser = shopUser;
+    }
+
+    public Set<CartItem> getItems() {
+        return items;
+    }
+
+    public void setItems(Set<CartItem> items) {
+        this.items = items;
+    }
+
+    public Double getTotalPrice() {
+        return totalPrice;
+    }
+
+    public void setTotalPrice(Double totalPrice) {
+        this.totalPrice = totalPrice;
+    }
+
+    public Boolean getFinalized() {
+        return finalized;
+    }
+
+    public void setFinalized(Boolean finalized) {
+        this.finalized = finalized;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public UUID getUuid() {
+        return uuid;
+    }
 
 }
