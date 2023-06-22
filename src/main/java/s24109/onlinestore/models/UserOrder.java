@@ -17,10 +17,9 @@ public class UserOrder {
     private UUID uuid = UUID.randomUUID();
     @ManyToOne
     private ShopUser shopUser;
-    @OneToMany(mappedBy = "userOrder")
-    @NotEmpty(message = "Order must contain at least 1 item.")
+    @OneToMany(mappedBy = "userOrder", fetch = FetchType.EAGER)
     private Set<CartItem> items = new HashSet<>();
-    private Double totalPrice;
+    private Double totalPrice = 0.0;
     private Boolean finalized;
 
     public UserOrder(ShopUser shopUser) {

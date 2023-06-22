@@ -11,8 +11,8 @@
   <div th:classappend="${purchase} ? success_overlay : single_page_container">
     <p class="single_page_title">It's time to pay for your beasts.</p>
     <p class="single_page_subtitle" style="margin: 0">You owe the Monster Master:</p>
-    <p class="single_page_coin_title">Gold Count</p>
-    <p class="single_page_subtitle">So pay up!</p>
+    <p class="single_page_coin_title" th:text="${user_cart.getTotalPrice()} + 'gp'">Gold Count</p>
+    <p class="single_page_subtitle">Pay up!</p>
     <form id="single_page_form" th:action="@{/checkout-success}" method="post">
       <div><input class="single_page_pay" type="submit" value="Pay"/></div>
     </form>

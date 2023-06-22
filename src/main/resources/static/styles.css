@@ -38,11 +38,12 @@ body {
 }
 
 #header_text {
-    top: -1rem;
+    top: 1rem;
     font-size: 3rem;
     text-shadow: 0 0 5px #ffffff;
     animation: glow 1s infinite alternate;
     color: rgb(143, 6, 6);
+    text-decoration: transparent;
 }
 
 @keyframes glow {
@@ -172,6 +173,18 @@ body {
     animation: price_gradient 3s cubic-bezier(.61,0,.39,1) infinite;
     width: 15rem;
     overflow: scroll;
+    text-align: left;
+}
+
+.cart_product_generic_label, .cart_product_quantity_label {
+    font-size: 2rem;
+    position: relative;
+    float: left;
+    margin: 0 1rem 0 0;
+}
+
+.cart_product_quantity_label {
+    width: 30rem;
     text-align: left;
 }
 
@@ -392,6 +405,7 @@ body {
     border-image: url('../site_img/bone_border.png') 35% stretch;
     animation: price_gradient_mod_bg 2.2s cubic-bezier(.61,0,.39,1) infinite;
     filter: drop-shadow(0 0 4rem rgb(255, 255, 255));
+    background-clip: padding-box;
 }
 
 @keyframes price_gradient_mod_bg {

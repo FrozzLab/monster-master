@@ -63,14 +63,21 @@ public class CartController {
         if (optionalCartItem.isPresent()) {
             CartItem cartItem = optionalCartItem.get();
             cartItem.setQuantity(cartItem.getQuantity() + quantity);
+            userOrder.setTotalPrice(userOrder.getTotalPrice() + product.getPrice() * quantity);
 
-            cartRepository.save(cartItem);
-        } else {
-            CartItem cartItem = new CartItem(product, userOrder, quantity);
-            userOrder.getItems().add(cartItem);
 
             orderRepository.save(userOrder);
             cartRepository.save(cartItem);
+        } else {
+            CartItem cartItem = new CartItem(product, userOrder, quantity);
+
+            userOrder.setTotalPrice(userOrder.getTotalPrice() + product.getPrice() * quantity);
+
+            orderRepository.save(userOrder);
+            cartRepository.save(cartItem);
+
+            userOrder.getItems().add(cartItem);
+            orderRepository.save(userOrder);
         }
 
         return "redirect:/";
